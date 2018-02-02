@@ -44,9 +44,9 @@ public class StringCode {
 		StringBuilder blowupstring = new StringBuilder();		
 		for(int i=0, len = str.length(); i<len; i++){
 			
-			if (Character.isDigit(str.charAt(i) ){
+			if (Character.isDigit(str.charAt(i))) {
 				if (i+1<len){
-					for (int j=0, rep = Character.getNumericValue(str.charAt(i)); j< rep: j++){
+					for (int j=0, rep = Character.getNumericValue(str.charAt(i)); j< rep; j++){
 						blowupstring.append(str.charAt(i));
 					}
 					blowupstring.append(str.charAt(i+1));
