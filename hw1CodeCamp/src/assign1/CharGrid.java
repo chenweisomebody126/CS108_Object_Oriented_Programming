@@ -23,8 +23,24 @@ public class CharGrid {
 	 * @return area for given char
 	 */
 	public int charArea(char ch) {
-		return 0; // TODO ADD YOUR CODE HERE
-		
+		if (grid == null || grid.length == 0 || grid[0]== null || grid[0].length == 0)
+			return 0;
+		int m = grid.length, n = grid[0].length;
+		int min_row = Integer.MAX_VALUE, max_row = Integer.MIN_VALUE;
+		int min_col = Integer.MAX_VALUE, max_col = Integer.MIN_VALUE;
+		for (int i=0 ; i<m; i++) {
+			for (int j =0; j<n ; j++) {
+				if (grid[i][j] == ch) {
+					min_row = Math.min(min_row, i);
+					max_row = Math.max(max_row, i);
+					min_col = Math.min(min_col, j);
+					max_col = Math.max(max_col, j);
+				}
+			}
+		}
+		if (min_row == Integer.MAX_VALUE || max_row == Integer.MIN_VALUE || min_col == Integer.MAX_VALUE || max_col == Integer.MIN_VALUE) 
+			return 0
+		return (max_row - min_row)*(max_col - min_col); // TODO ADD YOUR CODE HERE
 	}
 	
 	/**
