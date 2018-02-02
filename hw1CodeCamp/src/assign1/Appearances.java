@@ -3,6 +3,7 @@ package assign1;
 import java.util.*;
 
 public class Appearances {
+	// Testing
 	
 	/**
 	 * Returns the number of elements that appear the same number
