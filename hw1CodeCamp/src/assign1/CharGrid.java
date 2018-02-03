@@ -56,7 +56,7 @@ public class CharGrid {
 			for (int j=1; j<n-1; j++) {
 				char mid = grid[i][j];
 				if (mid == grid[i][j-1] && mid == grid[i][j+1] && mid == grid[i-1][j] && mid == grid[i+1][j]) {
-					if (isPlus(i, j)) {
+					if (isPlus(i, j)) {	
 						count++;
 					}
 				}
