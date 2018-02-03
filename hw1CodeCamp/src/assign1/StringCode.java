@@ -2,8 +2,6 @@ package assign1;
 
 import java.util.HashSet;
 import java.util.Set;
-import java.util.StingBuilder;
-import java.lang.Character
 // CS108 HW1 -- String static methods
 
 public class StringCode {
