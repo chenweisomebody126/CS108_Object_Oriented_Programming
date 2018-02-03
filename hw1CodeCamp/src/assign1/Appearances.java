@@ -9,7 +9,22 @@ public class Appearances {
 	 * @return number of same-appearance elements
 	 */
 	public static <T> int sameCount(Collection<T> a, Collection<T> b) {
-		return 0; // TODO ADD CODE HERE
+		HashMap<T, Integer> counter = new HashMap<T, Integer>(); 
+		for(T ele: b) {
+			if (counter.containsKey(ele)){
+				counter.put(ele, counter.get(ele)+1);
+			} else {
+				counter.put(ele, 1);
+			}
+		}
+		int appearance = 0;
+		for (T ele: a) {
+			if (counter.containsKey(ele) && counter.get(ele)>0) {
+				appearance++;
+				counter.put(ele, counter.get(ele)-1);
+			}
+		}
+		return appearance; // TODO ADD CODE HERE
 	}
 	
 }
