@@ -45,9 +45,8 @@ public class StringCode {
 			if (Character.isDigit(str.charAt(i))) {
 				if (i+1<len){
 					for (int j=0, rep = Character.getNumericValue(str.charAt(i)); j< rep; j++){
-						blowupstring.append(str.charAt(i));
+						blowupstring.append(str.charAt(i+1));
 					}
-					blowupstring.append(str.charAt(i+1));
 				}
 			} else {
 				blowupstring.append(str.charAt(i));

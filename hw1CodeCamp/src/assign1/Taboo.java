@@ -31,7 +31,9 @@ public class Taboo<T> {
 		Set<T> tabooSet = new HashSet<T>(); 
 		for (int i=0, size =rules.size(); i<size-1; i++) {
 			if (rules.get(i) ==elem) {
-				tabooSet.add(rules.get(i+1));
+				if (rules.get(i+1) != null) {
+					tabooSet.add(rules.get(i+1));		
+				}
 			}
 		}
 		if (tabooSet.isEmpty())
