@@ -14,7 +14,7 @@
         android:layout_height="380sp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:background="#8C1515" />
+        android:background="#000000" />
 
     <LinearLayout
         android:id="@+id/colorSliders"
@@ -61,7 +61,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:text="Change Color" />
+            android:text="Change Color"
+            android:onClick="getColor"/>
     </LinearLayout>
 
 </RelativeLayout>
