@@ -48,9 +48,12 @@
 
         <RadioGroup
             android:id="@+id/deliver_group"
+            android:orientation="vertical"
+            android:checkedButton="@+id/standard_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:baselineAligned="false">
+
 
             <RadioButton
                 android:id="@+id/next_day_button"
@@ -66,7 +69,7 @@
                 android:text="Second Day" />
 
             <RadioButton
-                android:id="@+id/standard_button"
+                android:id="@id/standard_button"
                 android:layout_width="141dp"
                 android:layout_height="wrap_content"
                 android:text="Standard"

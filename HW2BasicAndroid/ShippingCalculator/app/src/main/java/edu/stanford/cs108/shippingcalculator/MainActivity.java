@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,12 +18,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void getCost(View view){
-        RadioButton isNextDay = (RadioButton) findViewById(R.id.next_day_button);
-        RadioButton isSecondDay = (RadioButton) findViewById(R.id.second_day_button);
-        RadioButton isStandard = (RadioButton) findViewById(R.id.standard_button);
-        EditText weight = (EditText) findViewById(R.id.weight);
+        EditText weightText = (EditText) findViewById(R.id.weight);
         CheckBox insurance_checkbox = (CheckBox) findViewById(R.id.insurance_checkbox);
-        TextView cost = (TextView) findViewById(R.id.cost);
+        TextView costView = (TextView) findViewById(R.id.cost);
+
+        int weightDecimal = Integer.parseInt(weightText.getText().toString());
+        Log.d(TAG, "onCreate() No saved state available");
+        RadioGroup group = (RadioGroup) findViewById(R.id.deliver_group);
+        int currentOption = group.getCheckedRadioButtonId();
+        float cost = 0.0f;
+        switch(currentOption) {
+            case R.id.next_day_button:
+                cost = 10*weightDecimal;
+                break;
+            case R.id.second_day_button:
+                cost = 5*weightDecimal;
+                break;
+            case R.id.standard_button:
+                cost = 3*weightDecimal;
+                break;
+        }
+        if (insurance_checkbox.isChecked()){
+            cost = cost * 1.2f;
+        }
+        int ceilingCost = (int) Math.ceil(cost);
+        Log.d(TAG, Integer.toString(ceilingCost));
+
+        costView.setText(Integer.toString(ceilingCost));
 
     }
 }
